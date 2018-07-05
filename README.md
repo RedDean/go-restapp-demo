@@ -9,12 +9,19 @@
 - 启动服务
 - 服务状态检查
 
-设置HTTP请求又分为:
+#### 设置HTTP请求
+**设置HTTP请求**又分为:
 
 1. 设置Header
 2. 注册路由
 3. 注册中间件
 
+#### 中间件
 
+中间件实际上是对HTTP报文header部分的操作:
+
+![http-header](./summary/img/http-header.png)
+
+gin中使用use来注册中间件，详细代码参看 router/middleware
 
 
