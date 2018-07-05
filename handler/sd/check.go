@@ -1,18 +1,18 @@
 package sd
 
 import (
-	"github.com/gin-gonic/gin"
-	"net/http"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/shirou/gopsutil/cpu"
+	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/load"
 	"github.com/shirou/gopsutil/mem"
-	"github.com/shirou/gopsutil/disk"
+	"net/http"
 )
 
 const (
 	B  = 1
-	KB = 1024*B
+	KB = 1024 * B
 	MB = 1024 * KB
 	GB = 1024 * MB
 )
