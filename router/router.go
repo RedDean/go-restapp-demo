@@ -5,6 +5,8 @@ import (
 	"go-restapp-demo/handler/sd"
 	"go-restapp-demo/router/middleware"
 	"net/http"
+
+	"go-restapp-demo/handler/user"
 )
 
 /**
@@ -34,6 +36,12 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("/disk", sd.DiskCheck)     // 硬盘情框
 		svcd.GET("/cpu", sd.CPUCheck)       // CPU检查
 		svcd.GET("/ram", sd.RAMCheck)       // 内存检查
+	}
+
+	// user分组
+	u := g.Group("/v1/user")
+	{
+		u.POST("/:username", user.Create)
 	}
 
 	return g
